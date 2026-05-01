@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande d'achat - Web 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Commander le Support Web 1</h2>
+        <p class="price">Prix : 3 $</p>
+        
+        <div class="info-text">
+            Une demande sera envoyée par email. Vous recevrez le document après confirmation du paiement Mobile Money.
+        </div>
+
+        <div class="form-group">
+            <label>Votre Nom complet :</label>
+            <input type="text" id="clientName" placeholder="Ex: Jean Mukendi">
+        </div>
+
+        <div class="form-group">
+            <label>Opérateur de paiement :</label>
+            <select id="operator">
+                <option value="M-Pesa">Vodacom M-Pesa</option>
+                <option value="Airtel Money">Airtel Money</option>
+                <option value="Orange Money">Orange Money</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Votre numéro de téléphone :</label>
+            <input type="tel" id="clientPhone" placeholder="Ex: 0812345678">
+        </div>
+
+        <button onclick="genererEmailDemande()">Commander par Email</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
