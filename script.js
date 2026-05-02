@@ -1,32 +1,32 @@
 function genererEmailDemande() {
-    // Récupération des données
     const nom = document.getElementById('clientName').value;
     const tel = document.getElementById('clientPhone').value;
     const operateur = document.getElementById('operator').value;
+    const parrain = document.getElementById('parrainName').value;
 
-    // Validation
     if (nom === "" || tel === "") {
-        alert("Attention : Veuillez remplir tous les champs !");
+        alert("Attention : Veuillez entrer votre nom et votre numéro !");
         return;
     }
 
-    // Configuration de l'email
-    const destinataire = "kisiabingoamange@gmail.com"; // REMPLACE PAR TON EMAIL
-    const sujet = `Demande d'achat Support Web 1 - ${nom}`;
+    const monEmail = "kisiabongoamange@gmail.com"; // REMPLACE PAR TON ADRESSE EMAIL
+    const sujet = `Achat Support Web 1 - ${nom}`;
     
-    // Contenu de l'email
-    const corps = `Bonjour,\n\n` +
-                  `Je souhaite acheter le document 'Programmation Web 1'.\n\n` +
-                  `DÉTAILS DU CLIENT :\n` +
-                  `- Nom : ${nom}\n` +
-                  `- Numéro : ${tel}\n` +
-                  `- Opérateur choisi : ${operateur}\n\n` +
-                  `Veuillez me confirmer la réception du paiement de 3$ pour m'envoyer le fichier.\n` +
-                  `Cordialement.`;
+    let corps = `Bonjour,\n\n` +
+                `Je souhaite acheter le document 'Support Web 1' au prix de 3$.\n\n` +
+                `COORDONNÉES :\n` +
+                `- Nom : ${nom}\n` +
+                `- Téléphone : ${tel}\n` +
+                `- Opérateur : ${operateur}\n`;
 
-    // Encodage pour l'URL
-    const mailtoLink = `mailto:${destinataire}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+    // Si un parrain est mentionné, on l'ajoute au texte
+    if (parrain.trim() !== "") {
+        corps += `- Recruté par : ${parrain}\n`;
+    }
 
-    // Exécution : Ouvre l'application de messagerie
+    corps += `\nVeuillez me confirmer la réception du paiement pour m'envoyer le fichier.`;
+
+    const mailtoLink = `mailto:${monEmail}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+    
     window.location.href = mailtoLink;
 }
