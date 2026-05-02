@@ -2,18 +2,27 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demande d'achat - Web 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Commande Support Web 1</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="card">
         <h2>Commander le Support Web 1</h2>
+        
+        <div class="img-container">
+            <img src="1777704821131.jpg" alt="Support Web 1">
+        </div>
+
         <p class="price">Prix : 3 $</p>
+
+        <div class="promo-badge">
+            🎁 <strong>Offre Spéciale :</strong> Recrutez au moins 5 personnes pour acheter le document et recevez une gratification de l'auteur !
+        </div>
         
         <div class="info-text">
-            Une demande sera envoyée par email. Vous recevrez le document après confirmation du paiement Mobile Money.
+            La demande sera envoyée par email. Vous recevrez le PDF après confirmation du paiement Mobile Money.
         </div>
 
         <div class="form-group">
@@ -22,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            <label>Opérateur de paiement :</label>
+            <label>Opérateur :</label>
             <select id="operator">
                 <option value="M-Pesa">Vodacom M-Pesa</option>
                 <option value="Airtel Money">Airtel Money</option>
@@ -33,6 +42,11 @@
         <div class="form-group">
             <label>Votre numéro de téléphone :</label>
             <input type="tel" id="clientPhone" placeholder="Ex: 0812345678">
+        </div>
+
+        <div class="form-group">
+            <label>Parrain (Si recruté par quelqu'un) :</label>
+            <input type="text" id="parrainName" placeholder="Nom de votre parrain">
         </div>
 
         <button onclick="genererEmailDemande()">Commander par Email</button>
